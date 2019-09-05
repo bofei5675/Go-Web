@@ -2,9 +2,9 @@ package model
 
 import (
 	"database/sql"
-	"log"
 	_ "github.com/go-sql-driver/mysql" // provider driver for mysql from driver.go
 	"github.com/spf13/viper"
+	"log"
 )
 
 var DB *sql.DB // global variable
