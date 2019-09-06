@@ -1,0 +1,2 @@
+2019/09/06 14:02:25 init.go:30: MySQL Startup Normal !
+2019/09/06 14:02:25 main.go:30: Start to listening the incoming requests on http%!(EXTRA string=127.0.0.1:8083)
