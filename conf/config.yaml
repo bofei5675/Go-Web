@@ -1,5 +1,5 @@
 mysql:
   max_idle_counts: 50
-  source_name: root:@tcp(127.0.0.1:3306)/devops?parseTime=true&charset=utf8&loc=Local
+  source_name: root:Ehe131224@tcp(127.0.0.1:3306)/devops?parseTime=true&charset=utf8&loc=Local
 
 addr: 127.0.0.1:8083
