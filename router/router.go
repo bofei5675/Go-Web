@@ -1,9 +1,9 @@
 package router
-import(
-	"net/http"
-	"../service"
-	"./middleware"
+import (
+	"Go-Web/router/middleware"
+	"Go-Web/service"
 	"github.com/gin-gonic/gin"
+	"net/http"
 )
 
 func InitRouter(g *gin.Engine){

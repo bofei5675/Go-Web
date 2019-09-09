@@ -1,9 +1,9 @@
 package model
 
 import (
-	"errors"
-	"../pkg/errno"
+	"Go-Web/pkg/errno"
 	"encoding/json"
+	"errors"
 	"log"
 )
 
@@ -11,30 +11,25 @@ type User struct {
 	UserName string `json:"user_name"`
 	Password string `json:"password"`
 }
-
-func (user *User) SelectUserByName(name string) error {
-	stmt, err := DB.Prepare("SELECT user_name,password FROM user WHERE user_name=?")
-	if err == nil {
-		return err
-	}
-	defer stmt.Close()
-
-	rows, err := stmt.Query(name)
-	defer rows.Close()
-
+func (user *User)SelectUserByName(name string)error {
+	stmt,err := DB.Prepare("SELECT user_name,password FROM user WHERE user_name=?")
 	if err != nil {
 		return err
 	}
-
-	for rows.Next(){
-		rows.Scan(&user.UserName, &user.Password)
-	}
-	if err := rows.Err(); err != nil{
+	defer stmt.Close()
+	rows, err := stmt.Query(name)
+	defer rows.Close()
+	if err != nil {
 		return err
 	}
-
+	// 数据处理
+	for rows.Next() {
+		rows.Scan( &user.UserName, &user.Password)
+	}
+	if err := rows.Err(); err != nil {
+		return err
+	}
 	return nil
-
 }
 
 // Validate the fields

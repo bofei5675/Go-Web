@@ -1,9 +1,9 @@
 package main
 
 import (
-	"./config"
-	"./model"
-	"./router"
+	"Go-Web/config"
+	"Go-Web/model"
+	"Go-Web/router"
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"github.com/spf13/viper"
@@ -27,7 +27,7 @@ func main() {
 	g := gin.New()
 
 	router.InitRouter(g)
-	log.Printf("Start to listening the incoming requests on http", viper.GetString("addr"))
+	log.Printf("Start to listening the incoming requests on http %s", viper.GetString("addr"))
 	if err := g.Run(viper.GetString("addr")); err != nil {
 		log.Fatal("ListenAndServe:", err)
 	}

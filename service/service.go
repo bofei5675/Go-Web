@@ -2,12 +2,29 @@ package service
 
 
 import (
-	_ "../handler"
-	"../model"
-	"../pkg/errno"
+	"Go-Web/model"
+	"Go-Web/pkg/errno"
+	"fmt"
 	"github.com/gin-gonic/gin"
 	"log"
+	"net/http"
 )
+type Response struct {
+	Code int `json:"code"`
+	Message string `json:"message"`
+	Data interface{} `json:"data"`
+}
+
+func SendResponse(c *gin.Context, err error, data interface{}){
+	code, message := errno.DecodeErr(err)
+	// always return status OK here
+
+	c.JSON(http.StatusOK, Response{
+		Code:    code,
+		Message: message,
+		Data:    data,
+	})
+}
 
 func AddUser(c *gin.Context){
 	var r model.User
@@ -39,20 +56,21 @@ func AddUser(c *gin.Context){
 
 func SelectUser(c *gin.Context){
 	name := c.Query("user_name")
-	log.Printf("Start search user %s",name)
 	if name == ""{
 		SendResponse(c, errno.ErrValidation, nil)
 		return
 	}
-	var user model.User
-	if err := user.SelectUserByName(name) ; err != nil {
+	var  user model.User
+	if err := user.SelectUserByName(name);nil != err {
+		fmt.Println(err)
 		SendResponse(c, errno.ErrUserNotFound, nil)
+		return
 	}
-	log.Printf("Finish Select.")
+	// Validate the data.
 	if err := user.Validate(); err != nil {
 		SendResponse(c, errno.ErrUserNotFound, nil)
 		return
 	}
-	log.Printf("Send back the user %s", user)
+
 	SendResponse(c, nil, user)
 }

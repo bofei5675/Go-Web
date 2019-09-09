@@ -1,9 +1,9 @@
 package handler
 
-import(
-	"net/http"
+import (
+	"Go-Web/pkg/errno"
 	"github.com/gin-gonic/gin"
-	"../pkg/errno"
+	"net/http"
 )
 
 type Response struct {

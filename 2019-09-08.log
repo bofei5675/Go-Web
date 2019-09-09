@@ -1,2 +1,28 @@
 2019/09/08 21:47:26 init.go:30: MySQL Startup Normal !
 2019/09/08 21:47:26 main.go:30: Start to listening the incoming requests on http%!(EXTRA string=127.0.0.1:8083)
+2019/09/08 22:44:51 init.go:30: MySQL Startup Normal !
+2019/09/08 22:44:51 main.go:30: Start to listening the incoming requests on http%!(EXTRA string=127.0.0.1:8083)
+2019/09/08 22:45:03 service.go:58: Start search user hello
+2019/09/08 22:45:03 service.go:67: Finish Select.
+2019/09/08 22:45:53 init.go:30: MySQL Startup Normal !
+2019/09/08 22:45:53 main.go:30: Start to listening the incoming requests on http%!(EXTRA string=127.0.0.1:8083)
+2019/09/08 22:46:05 service.go:59: Start search user hello
+2019/09/08 22:46:05 service.go:69: Finish Select.
+2019/09/08 22:49:15 init.go:30: MySQL Startup Normal !
+2019/09/08 22:49:15 main.go:30: Start to listening the incoming requests on http 127.0.0.1:8083
+2019/09/08 22:49:19 service.go:59: Start search user hello
+2019/09/08 22:49:19 service.go:69: Finish Select.
+2019/09/08 22:49:26 init.go:30: MySQL Startup Normal !
+2019/09/08 22:49:26 main.go:30: Start to listening the incoming requests on http 127.0.0.1:8083
+2019/09/08 22:49:30 service.go:59: Start search user hello
+2019/09/08 22:49:30 service.go:69: Finish Select.
+2019/09/08 22:49:58 service.go:59: Start search user 
+2019/09/08 22:50:54 init.go:30: MySQL Startup Normal !
+2019/09/08 22:50:54 main.go:30: Start to listening the incoming requests on http 127.0.0.1:8083
+2019/09/08 22:50:58 service.go:59: Start search user hello
+2019/09/08 22:50:58 service.go:69: Finish Select.
+2019/09/08 23:00:55 init.go:30: MySQL Startup Normal !
+2019/09/08 23:00:55 main.go:30: Start to listening the incoming requests on http 127.0.0.1:8083
+2019/09/08 23:01:25 service.go:59: Start search user hello
+2019/09/08 23:04:37 init.go:30: MySQL Startup Normal !
+2019/09/08 23:04:37 main.go:30: Start to listening the incoming requests on http 127.0.0.1:8083
